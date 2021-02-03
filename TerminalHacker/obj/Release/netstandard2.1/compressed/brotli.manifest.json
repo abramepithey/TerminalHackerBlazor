@@ -1,0 +1,159 @@
+{
+  "FilesToCompress": [
+    {
+      "InputSource": "obj\/Release\/netstandard2.1\/integrity\/cqwkYWLuxeUE-HTzt2z858AQK1adHQkLAXPNCLaZdSo=.hash",
+      "Source": "\/Users\/abrampithey\/Repos\/TerminalHackerBlazor\/TerminalHacker\/obj\/Release\/netstandard2.1\/blazor\/linker\/Microsoft.AspNetCore.Components.dll",
+      "Target": "obj\/Release\/netstandard2.1\/compressed\/_framework\/_bin\/Microsoft.AspNetCore.Components.dll.br"
+    },
+    {
+      "InputSource": "obj\/Release\/netstandard2.1\/integrity\/rXG55Lpz-j_IwInJrSAMGq_eulCH6ZLV0_KwO1GhYE4=.hash",
+      "Source": "\/Users\/abrampithey\/Repos\/TerminalHackerBlazor\/TerminalHacker\/obj\/Release\/netstandard2.1\/blazor\/linker\/Microsoft.AspNetCore.Components.Web.dll",
+      "Target": "obj\/Release\/netstandard2.1\/compressed\/_framework\/_bin\/Microsoft.AspNetCore.Components.Web.dll.br"
+    },
+    {
+      "InputSource": "obj\/Release\/netstandard2.1\/integrity\/lGRuL-2iR_j4hKwFWznAtUxpH-77Yhdmfx77Aqy0c78=.hash",
+      "Source": "\/Users\/abrampithey\/Repos\/TerminalHackerBlazor\/TerminalHacker\/obj\/Release\/netstandard2.1\/blazor\/linker\/Microsoft.AspNetCore.Components.WebAssembly.dll",
+      "Target": "obj\/Release\/netstandard2.1\/compressed\/_framework\/_bin\/Microsoft.AspNetCore.Components.WebAssembly.dll.br"
+    },
+    {
+      "InputSource": "obj\/Release\/netstandard2.1\/integrity\/jzHgXWAvWMkKIGFjZoT84tbe72E_H7CvTr-Dryh4QPs=.hash",
+      "Source": "\/Users\/abrampithey\/Repos\/TerminalHackerBlazor\/TerminalHacker\/obj\/Release\/netstandard2.1\/blazor\/linker\/Microsoft.Bcl.AsyncInterfaces.dll",
+      "Target": "obj\/Release\/netstandard2.1\/compressed\/_framework\/_bin\/Microsoft.Bcl.AsyncInterfaces.dll.br"
+    },
+    {
+      "InputSource": "obj\/Release\/netstandard2.1\/integrity\/Bl7QhBYGIYdwZHIa7WLOBPAPWmJXrZqf0JUIqu7MECU=.hash",
+      "Source": "\/Users\/abrampithey\/Repos\/TerminalHackerBlazor\/TerminalHacker\/obj\/Release\/netstandard2.1\/blazor\/linker\/Microsoft.Extensions.Configuration.Abstractions.dll",
+      "Target": "obj\/Release\/netstandard2.1\/compressed\/_framework\/_bin\/Microsoft.Extensions.Configuration.Abstractions.dll.br"
+    },
+    {
+      "InputSource": "obj\/Release\/netstandard2.1\/integrity\/zd-AesTbZ75GP86LOGgyoppwQx6KtDoOVFTkRGW0m74=.hash",
+      "Source": "\/Users\/abrampithey\/Repos\/TerminalHackerBlazor\/TerminalHacker\/obj\/Release\/netstandard2.1\/blazor\/linker\/Microsoft.Extensions.Configuration.dll",
+      "Target": "obj\/Release\/netstandard2.1\/compressed\/_framework\/_bin\/Microsoft.Extensions.Configuration.dll.br"
+    },
+    {
+      "InputSource": "obj\/Release\/netstandard2.1\/integrity\/fegpAXL5Rj5alva32QmVG_ZxIhS5sMPKUc1QmMfygwk=.hash",
+      "Source": "\/Users\/abrampithey\/Repos\/TerminalHackerBlazor\/TerminalHacker\/obj\/Release\/netstandard2.1\/blazor\/linker\/Microsoft.Extensions.Configuration.Json.dll",
+      "Target": "obj\/Release\/netstandard2.1\/compressed\/_framework\/_bin\/Microsoft.Extensions.Configuration.Json.dll.br"
+    },
+    {
+      "InputSource": "obj\/Release\/netstandard2.1\/integrity\/kPvSucm5zBJsPM7Y1J0JcGxKiWS2jMSsYYFr_s7kdLo=.hash",
+      "Source": "\/Users\/abrampithey\/Repos\/TerminalHackerBlazor\/TerminalHacker\/obj\/Release\/netstandard2.1\/blazor\/linker\/Microsoft.Extensions.DependencyInjection.Abstractions.dll",
+      "Target": "obj\/Release\/netstandard2.1\/compressed\/_framework\/_bin\/Microsoft.Extensions.DependencyInjection.Abstractions.dll.br"
+    },
+    {
+      "InputSource": "obj\/Release\/netstandard2.1\/integrity\/9c4blEQ9jf2IdjrC6O1T7oelIlounDNynv6nvAwWEkI=.hash",
+      "Source": "\/Users\/abrampithey\/Repos\/TerminalHackerBlazor\/TerminalHacker\/obj\/Release\/netstandard2.1\/blazor\/linker\/Microsoft.Extensions.DependencyInjection.dll",
+      "Target": "obj\/Release\/netstandard2.1\/compressed\/_framework\/_bin\/Microsoft.Extensions.DependencyInjection.dll.br"
+    },
+    {
+      "InputSource": "obj\/Release\/netstandard2.1\/integrity\/t3ZUY4x4tG7Nq5UBlYTYI86Vv_2JYVoJ3pQBJWMxLJI=.hash",
+      "Source": "\/Users\/abrampithey\/Repos\/TerminalHackerBlazor\/TerminalHacker\/obj\/Release\/netstandard2.1\/blazor\/linker\/Microsoft.Extensions.Logging.Abstractions.dll",
+      "Target": "obj\/Release\/netstandard2.1\/compressed\/_framework\/_bin\/Microsoft.Extensions.Logging.Abstractions.dll.br"
+    },
+    {
+      "InputSource": "obj\/Release\/netstandard2.1\/integrity\/AotESHtZcalYGHq3qp3RYTzk63x89oJ4ItgCu8efySk=.hash",
+      "Source": "\/Users\/abrampithey\/Repos\/TerminalHackerBlazor\/TerminalHacker\/obj\/Release\/netstandard2.1\/blazor\/linker\/Microsoft.Extensions.Logging.dll",
+      "Target": "obj\/Release\/netstandard2.1\/compressed\/_framework\/_bin\/Microsoft.Extensions.Logging.dll.br"
+    },
+    {
+      "InputSource": "obj\/Release\/netstandard2.1\/integrity\/KsYMF9uM5L2KLGHVJZQDTXgMl_Itlb2nQ4liCfadAXQ=.hash",
+      "Source": "\/Users\/abrampithey\/Repos\/TerminalHackerBlazor\/TerminalHacker\/obj\/Release\/netstandard2.1\/blazor\/linker\/Microsoft.Extensions.Options.dll",
+      "Target": "obj\/Release\/netstandard2.1\/compressed\/_framework\/_bin\/Microsoft.Extensions.Options.dll.br"
+    },
+    {
+      "InputSource": "obj\/Release\/netstandard2.1\/integrity\/6nQuPGLr81yenlPPNE47R2tZJOLgOHmPQhY59j-Hyls=.hash",
+      "Source": "\/Users\/abrampithey\/Repos\/TerminalHackerBlazor\/TerminalHacker\/obj\/Release\/netstandard2.1\/blazor\/linker\/Microsoft.Extensions.Primitives.dll",
+      "Target": "obj\/Release\/netstandard2.1\/compressed\/_framework\/_bin\/Microsoft.Extensions.Primitives.dll.br"
+    },
+    {
+      "InputSource": "obj\/Release\/netstandard2.1\/integrity\/3cbvJEo8k8VJVQwyEZWWQ6yGRFQW8-219DaOnmsX3e4=.hash",
+      "Source": "\/Users\/abrampithey\/Repos\/TerminalHackerBlazor\/TerminalHacker\/obj\/Release\/netstandard2.1\/blazor\/linker\/Microsoft.JSInterop.dll",
+      "Target": "obj\/Release\/netstandard2.1\/compressed\/_framework\/_bin\/Microsoft.JSInterop.dll.br"
+    },
+    {
+      "InputSource": "obj\/Release\/netstandard2.1\/integrity\/zV-OfJNfNsG404X30Pwkdymdh1KmZpTVEmG-JNFVc-k=.hash",
+      "Source": "\/Users\/abrampithey\/Repos\/TerminalHackerBlazor\/TerminalHacker\/obj\/Release\/netstandard2.1\/blazor\/linker\/Microsoft.JSInterop.WebAssembly.dll",
+      "Target": "obj\/Release\/netstandard2.1\/compressed\/_framework\/_bin\/Microsoft.JSInterop.WebAssembly.dll.br"
+    },
+    {
+      "InputSource": "obj\/Release\/netstandard2.1\/integrity\/zLSMeAT2fSxkUyq4dC6UmqCiKsrOVbo_cpBssAQuBo0=.hash",
+      "Source": "\/Users\/abrampithey\/Repos\/TerminalHackerBlazor\/TerminalHacker\/obj\/Release\/netstandard2.1\/blazor\/linker\/mscorlib.dll",
+      "Target": "obj\/Release\/netstandard2.1\/compressed\/_framework\/_bin\/mscorlib.dll.br"
+    },
+    {
+      "InputSource": "obj\/Release\/netstandard2.1\/integrity\/v4Tyb7lxCK3E20F8rv_bmiVcSng8Tp4pJsQxhAuURX0=.hash",
+      "Source": "\/Users\/abrampithey\/Repos\/TerminalHackerBlazor\/TerminalHacker\/obj\/Release\/netstandard2.1\/blazor\/linker\/System.Core.dll",
+      "Target": "obj\/Release\/netstandard2.1\/compressed\/_framework\/_bin\/System.Core.dll.br"
+    },
+    {
+      "InputSource": "obj\/Release\/netstandard2.1\/integrity\/_taJFUd8MAERqaCdWDt43QZrFlAXRePhiYVZvp9jPUQ=.hash",
+      "Source": "\/Users\/abrampithey\/Repos\/TerminalHackerBlazor\/TerminalHacker\/obj\/Release\/netstandard2.1\/blazor\/linker\/System.dll",
+      "Target": "obj\/Release\/netstandard2.1\/compressed\/_framework\/_bin\/System.dll.br"
+    },
+    {
+      "InputSource": "obj\/Release\/netstandard2.1\/integrity\/3uE-NhfcS9-DavDIU0owJBiq_IgiZlJMS4AzDaYm7Y4=.hash",
+      "Source": "\/Users\/abrampithey\/Repos\/TerminalHackerBlazor\/TerminalHacker\/obj\/Release\/netstandard2.1\/blazor\/linker\/System.Net.Http.dll",
+      "Target": "obj\/Release\/netstandard2.1\/compressed\/_framework\/_bin\/System.Net.Http.dll.br"
+    },
+    {
+      "InputSource": "obj\/Release\/netstandard2.1\/integrity\/gCxElWOofN0-zRjsIvbSqisEPC8h0mN0TsicviIQ1jo=.hash",
+      "Source": "\/Users\/abrampithey\/Repos\/TerminalHackerBlazor\/TerminalHacker\/obj\/Release\/netstandard2.1\/blazor\/linker\/System.Net.Http.Json.dll",
+      "Target": "obj\/Release\/netstandard2.1\/compressed\/_framework\/_bin\/System.Net.Http.Json.dll.br"
+    },
+    {
+      "InputSource": "obj\/Release\/netstandard2.1\/integrity\/HT4cDUxj9fp65cdiBA-XvZEIc5j-LG1-nH36OeCmpQ0=.hash",
+      "Source": "\/Users\/abrampithey\/Repos\/TerminalHackerBlazor\/TerminalHacker\/obj\/Release\/netstandard2.1\/blazor\/linker\/System.Net.Http.WebAssemblyHttpHandler.dll",
+      "Target": "obj\/Release\/netstandard2.1\/compressed\/_framework\/_bin\/System.Net.Http.WebAssemblyHttpHandler.dll.br"
+    },
+    {
+      "InputSource": "obj\/Release\/netstandard2.1\/integrity\/cmzOoZeV_P8oGyQwXrXqOc_k_V0yhY9o05k9285WuoQ=.hash",
+      "Source": "\/Users\/abrampithey\/Repos\/TerminalHackerBlazor\/TerminalHacker\/obj\/Release\/netstandard2.1\/blazor\/linker\/System.Runtime.CompilerServices.Unsafe.dll",
+      "Target": "obj\/Release\/netstandard2.1\/compressed\/_framework\/_bin\/System.Runtime.CompilerServices.Unsafe.dll.br"
+    },
+    {
+      "InputSource": "obj\/Release\/netstandard2.1\/integrity\/iLHqZoa4KZcKSoLa_55zoTSSmUCJKtijr5QPxu0PK0Q=.hash",
+      "Source": "\/Users\/abrampithey\/Repos\/TerminalHackerBlazor\/TerminalHacker\/obj\/Release\/netstandard2.1\/blazor\/linker\/System.Text.Encodings.Web.dll",
+      "Target": "obj\/Release\/netstandard2.1\/compressed\/_framework\/_bin\/System.Text.Encodings.Web.dll.br"
+    },
+    {
+      "InputSource": "obj\/Release\/netstandard2.1\/integrity\/iIPxZMIPJWAIP6aDrP_Cn4tgAWQk5ZaIFP78CVocC84=.hash",
+      "Source": "\/Users\/abrampithey\/Repos\/TerminalHackerBlazor\/TerminalHacker\/obj\/Release\/netstandard2.1\/blazor\/linker\/System.Text.Json.dll",
+      "Target": "obj\/Release\/netstandard2.1\/compressed\/_framework\/_bin\/System.Text.Json.dll.br"
+    },
+    {
+      "InputSource": "obj\/Release\/netstandard2.1\/integrity\/Id1Y5Ep0cLGCWm2yW87UXIAFSUGRJaVR5LK7ZacBXr8=.hash",
+      "Source": "\/Users\/abrampithey\/Repos\/TerminalHackerBlazor\/TerminalHacker\/obj\/Release\/netstandard2.1\/blazor\/linker\/TerminalHacker.dll",
+      "Target": "obj\/Release\/netstandard2.1\/compressed\/_framework\/_bin\/TerminalHacker.dll.br"
+    },
+    {
+      "InputSource": "obj\/Release\/netstandard2.1\/integrity\/sEVjFEIa-OlvGZbAZwbMZLciY-azIB4mPtYZ512gvn8=.hash",
+      "Source": "\/Users\/abrampithey\/Repos\/TerminalHackerBlazor\/TerminalHacker\/obj\/Release\/netstandard2.1\/blazor\/linker\/WebAssembly.Bindings.dll",
+      "Target": "obj\/Release\/netstandard2.1\/compressed\/_framework\/_bin\/WebAssembly.Bindings.dll.br"
+    },
+    {
+      "InputSource": "obj\/Release\/netstandard2.1\/integrity\/mPoqx7XczFHBWk3gRNn0hc9ekG1OvkKY4XiKRY5Mj5U=.hash",
+      "Source": "\/Users\/abrampithey\/.nuget\/packages\/microsoft.aspnetcore.components.webassembly.runtime\/3.2.0\/tools\/dotnetwasm\/wasm\/dotnet.3.2.0.js",
+      "Target": "obj\/Release\/netstandard2.1\/compressed\/_framework\/wasm\/dotnet.3.2.0.js.br"
+    },
+    {
+      "InputSource": "obj\/Release\/netstandard2.1\/integrity\/3S0qzYaBEKOBXarzVLNzNAFXlwJr6nI3lFlYUpQTPH8=.hash",
+      "Source": "\/Users\/abrampithey\/.nuget\/packages\/microsoft.aspnetcore.components.webassembly.runtime\/3.2.0\/tools\/dotnetwasm\/wasm\/dotnet.timezones.dat",
+      "Target": "obj\/Release\/netstandard2.1\/compressed\/_framework\/wasm\/dotnet.timezones.dat.br"
+    },
+    {
+      "InputSource": "obj\/Release\/netstandard2.1\/integrity\/UC-3Rm1NkdNdlIrzYARo_dO-HDlS5mhPxo0IQv7kma8=.hash",
+      "Source": "\/Users\/abrampithey\/.nuget\/packages\/microsoft.aspnetcore.components.webassembly.runtime\/3.2.0\/tools\/dotnetwasm\/wasm\/dotnet.wasm",
+      "Target": "obj\/Release\/netstandard2.1\/compressed\/_framework\/wasm\/dotnet.wasm.br"
+    },
+    {
+      "InputSource": "obj\/Release\/netstandard2.1\/integrity\/SPHS1EAPAcMFN4TEIUYl3FWtoCQTsNJch0XVGgok1eE=.hash",
+      "Source": "\/Users\/abrampithey\/.nuget\/packages\/microsoft.aspnetcore.components.webassembly.build\/3.2.1\/tools\/blazor\/blazor.webassembly.js",
+      "Target": "obj\/Release\/netstandard2.1\/compressed\/_framework\/blazor.webassembly.js.br"
+    },
+    {
+      "InputSource": "obj\/Release\/netstandard2.1\/integrity\/zS08sVO8lSQXvP52OgmmoYq3DdHSrGSltt9DOFZIfzA=.hash",
+      "Source": "\/Users\/abrampithey\/Repos\/TerminalHackerBlazor\/TerminalHacker\/obj\/Release\/netstandard2.1\/blazor\/blazor.boot.json",
+      "Target": "obj\/Release\/netstandard2.1\/compressed\/_framework\/blazor.boot.json.br"
+    }
+  ]
+}
