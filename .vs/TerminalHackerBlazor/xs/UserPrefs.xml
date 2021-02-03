@@ -1,9 +1,13 @@
 ﻿<Properties StartupConfiguration="{4CDA6221-6DC8-4060-ABB2-3272106CFB74}|Default">
-  <MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workbench ActiveDocument="README.md">
+    <Files>
+      <File FileName="README.md" Line="1" Column="1" />
+    </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="TerminalHackerBlazor" expanded="True" selected="True">
+            <Node name="Solution Items" expanded="True" />
             <Node name="TerminalHacker" expanded="True">
               <Node name="Dependencies" expanded="True" />
               <Node name="Pages" expanded="True" />
@@ -21,9 +25,6 @@
             </Node>
           </Node>
         </State>
-      </Pad>
-      <Pad Id="MonoDevelop.Debugger.WatchPad">
-        <State />
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
