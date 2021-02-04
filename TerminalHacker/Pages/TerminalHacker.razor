@@ -5,61 +5,123 @@
 
 <p>This component is the work-in-progress web version of my Terminal Hacker console application.</p>
 
-<button class="btn btn-primary" @onclick="GetEasyWordsAsync">Easy Words</button>
-<button class="btn btn-primary" @onclick="GetMediumWordsAsync">Medium Words</button>
-<button class="btn btn-primary" @onclick="GetHardWordsAsync">Hard Words</button>
+<button class="btn btn-primary my-1" @onclick="GetEasyWordsAsync">Easy Words</button>
+<button class="btn btn-primary my-1" @onclick="GetMediumWordsAsync">Medium Words</button>
+<button class="btn btn-primary my-1" @onclick="GetHardWordsAsync">Hard Words</button>
 @if (words == null)
 {
-    <p><em>Loading...</em></p>
+    <p><em>Select a difficulty!</em></p>
 }
 else
 {
     <button class="btn" type="reset" @onclick="ClearWords">Clear</button>
-    <table class="table">
+    <table class="table table-sm">
         <thead>
             <tr>
-                <th>Words</th>
+                <th scope="col">Words</th>
             </tr>
         </thead>
         <tbody>
-            @foreach (var word in words)
+            @foreach (var word in selectedWords)
             {
                 <tr>
-                    <td>@word.text</td>
+                    <td>@word</td>
                 </tr>
             }
         </tbody>
     </table>
+    <p><input @bind="userResponse" @bind:event="oninput" @onchange="CheckGuess" pattern=".{0}|.{@keyword.Length}" /> @evaluation  @tries @(tries == 1 ? "try" : "tries") remaining.</p>
+    <button @onclick="CheckGuess">Check</button>
 }
 
 @code {
     private List<Words> words;
+    private List<string> selectedWords;
+    private string keyword;
+    private string userResponse;
+    private string evaluation;
+    private int wordPoolLength = 14;
+    private int tries = 4;
+    Random rand = new Random();
 
     public void ClearWords()
     {
-        words.Clear();
+        words = new List<Words>();
+        selectedWords = new List<string>();
+        keyword = String.Empty;
+        userResponse = String.Empty;
+        tries = 4;
     }
 
     public async Task GetEasyWordsAsync()
     {
+        ClearWords();
         var wordsConnected = await Http.GetFromJsonAsync<List<Words>>("sample-data/easywords.json");
         words = wordsConnected.ToList();
+        RandomWordList(words);
     }
 
     public async Task GetMediumWordsAsync()
     {
+        ClearWords();
         var wordsConnected = await Http.GetFromJsonAsync<List<Words>>("sample-data/mediumwords.json");
         words = wordsConnected.ToList();
+        RandomWordList(words);
     }
 
     public async Task GetHardWordsAsync()
     {
+        ClearWords();
         var wordsConnected = await Http.GetFromJsonAsync<List<Words>>("sample-data/hardwords.json");
         words = wordsConnected.ToList();
+        RandomWordList(words);
     }
 
     public class Words
     {
         public string text { get; set; }
+    }
+
+    public void RandomWordList(List<Words> oldList)
+    {
+        List<string> tempList = new List<string>();
+        while (tempList.Count < wordPoolLength)
+        {
+            tempList.Add(oldList[rand.Next(oldList.Count)].text);
+        }
+        selectedWords = tempList;
+        keyword = selectedWords[rand.Next(selectedWords.Count)];
+    }
+
+    public void CheckGuess()
+    {
+        if (userResponse == keyword)
+            evaluation = "Good job!";
+        else if (userResponse.Length != keyword.Length)
+        {
+            evaluation = "Please enter the correct length of word.";
+        }
+        else
+        {
+            CheckLetters();
+            tries--;
+        }
+        if (tries == 0)
+        {
+            evaluation = "Game Over!";
+        }
+    }
+
+    public void CheckLetters()
+    {
+        int correctChars = 0;
+        for (int i = 0; i < userResponse.Length; i++)
+        {
+            if (keyword[i] == userResponse[i])
+            {
+                correctChars++;
+            }
+        }
+        evaluation = $"You got {correctChars} letters correct.";
     }
 }
