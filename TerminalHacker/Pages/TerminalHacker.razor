@@ -1,38 +1,33 @@
 @page "/terminalhacker"
 @inject HttpClient Http
 
-<h1>Terminal Hacker</h1>
+<div class="terminal-background-color">
+    <h1 class="terminal-text-color">Terminal Hacker</h1>
 
-<p>This component is the work-in-progress web version of my Terminal Hacker console application.</p>
+    <p class="terminal-text-color">This component is the work-in-progress web version of my Terminal Hacker console application.</p>
 
-<button class="btn btn-primary my-1" @onclick="GetEasyWordsAsync">Easy Words</button>
-<button class="btn btn-primary my-1" @onclick="GetMediumWordsAsync">Medium Words</button>
-<button class="btn btn-primary my-1" @onclick="GetHardWordsAsync">Hard Words</button>
-@if (words == null)
-{
-    <p><em>Select a difficulty!</em></p>
-}
-else
-{
-    <button class="btn" type="reset" @onclick="ClearWords">Clear</button>
-    <table class="table table-sm">
-        <thead>
-            <tr>
-                <th scope="col">Words</th>
-            </tr>
-        </thead>
-        <tbody>
+    <button class="btn btn-primary my-1" @onclick="GetEasyWordsAsync">Easy Words</button>
+    <button class="btn btn-primary my-1" @onclick="GetMediumWordsAsync">Medium Words</button>
+    <button class="btn btn-primary my-1" @onclick="GetHardWordsAsync">Hard Words</button>
+    @if (words == null)
+    {
+        <p><em>Select a difficulty!</em></p>
+    }
+    else
+    {
+        <button class="btn btn-secondary" type="reset" @onclick="ClearWords">Clear</button>
+        <div class="row terminal-background-color my-sm-5 my-2">
             @foreach (var word in selectedWords)
             {
-                <tr>
-                    <td>@word</td>
-                </tr>
+                <div class="col-sm-6">
+                    <h6 class="terminal-text-color mx-auto">@word</h6>
+                </div>
             }
-        </tbody>
-    </table>
-    <p><input @bind="userResponse" @bind:event="oninput" @onchange="CheckGuess" pattern=".{0}|.{@keyword.Length}" /> @evaluation  @tries @(tries == 1 ? "try" : "tries") remaining.</p>
-    <button @onclick="CheckGuess">Check</button>
-}
+        </div>
+        <p><input @bind="userResponse" @bind:event="oninput" @onchange="CheckGuess" pattern=".{0}|.{@keyword.Length}" /> @evaluation  @tries @(tries == 1 ? "try" : "tries") remaining.</p>
+        <button @onclick="CheckGuess">Check</button>
+    }
+</div>
 
 @code {
     private List<Words> words;

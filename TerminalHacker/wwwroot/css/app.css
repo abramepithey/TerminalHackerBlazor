@@ -138,7 +138,13 @@ app {
 
 /* Additional Styling */
 
+.terminal-background-color {
+    background-color: black;
+}
 
+.terminal-text-color {
+    color: green;
+}
 
 /* End of additional styling */
 
