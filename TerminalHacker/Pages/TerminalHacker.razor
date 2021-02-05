@@ -5,33 +5,26 @@
 
 <p>This component is the work-in-progress web version of my Terminal Hacker console application.</p>
 
-<button class="btn btn-primary my-1" @onclick="GetEasyWordsAsync">Easy Words</button>
-<button class="btn btn-primary my-1" @onclick="GetMediumWordsAsync">Medium Words</button>
-<button class="btn btn-primary my-1" @onclick="GetHardWordsAsync">Hard Words</button>
+<button class="btn-terminal terminal-text-color my-1" @onclick="GetEasyWordsAsync">Easy Words</button>
+<button class="btn-terminal terminal-text-color my-1" @onclick="GetMediumWordsAsync">Medium Words</button>
+<button class="btn-terminal terminal-text-color my-1" @onclick="GetHardWordsAsync">Hard Words</button>
 @if (words == null)
 {
     <p><em>Select a difficulty!</em></p>
 }
 else
 {
-    <button class="btn" type="reset" @onclick="ClearWords">Clear</button>
-    <table class="table table-sm">
-        <thead>
-            <tr>
-                <th scope="col">Words</th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach (var word in selectedWords)
-            {
-                <tr>
-                    <td>@word</td>
-                </tr>
-            }
-        </tbody>
-    </table>
+    <button class="btn-terminal terminal-text-color my-1" type="reset" @onclick="ClearWords">Clear</button>
+    <div class="row my-sm-5 my-2">
+        @foreach (var word in selectedWords)
+        {
+            <div class="col-sm-6">
+                <h6 class="mx-auto">@word</h6>
+            </div>
+        }
+    </div>
     <p><input @bind="userResponse" @bind:event="oninput" @onchange="CheckGuess" pattern=".{0}|.{@keyword.Length}" /> @evaluation  @tries @(tries == 1 ? "try" : "tries") remaining.</p>
-    <button @onclick="CheckGuess">Check</button>
+    <button class="btn-terminal terminal-text-color my-1" @onclick="CheckGuess">Check</button>
 }
 
 @code {
