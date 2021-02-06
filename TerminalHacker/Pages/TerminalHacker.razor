@@ -8,7 +8,7 @@
 <button class="btn-terminal terminal-text-color my-1" @onclick="GetEasyWordsAsync">Easy Words</button>
 <button class="btn-terminal terminal-text-color my-1" @onclick="GetMediumWordsAsync">Medium Words</button>
 <button class="btn-terminal terminal-text-color my-1" @onclick="GetHardWordsAsync">Hard Words</button>
-@if (words == null)
+@if (_words == null)
 {
     <p><em>Select a difficulty!</em></p>
 }
@@ -16,105 +16,125 @@ else
 {
     <button class="btn-terminal terminal-text-color my-1" type="reset" @onclick="ClearWords">Clear</button>
     <div class="row my-sm-5 my-2">
-        @foreach (var word in selectedWords)
+        @foreach (var word in _selectedWords)
         {
-            <div class="col-sm-6">
-                <h6 class="mx-auto">@word</h6>
+            <div class="col-6">
+                <button class="mx-auto btn-terminal terminal-text-color" @onclick="() => CheckGuess(word)">@word</button>
             </div>
         }
     </div>
-    <p><input @bind="userResponse" @bind:event="oninput" @onchange="CheckGuess" pattern=".{0}|.{@keyword.Length}" /> @evaluation  @tries @(tries == 1 ? "try" : "tries") remaining.</p>
-    <button class="btn-terminal terminal-text-color my-1" @onclick="CheckGuess">Check</button>
+    @foreach(var response in _userResponse)
+    {
+        <div class="row">
+            <div class="col-6">
+                <p class="col-6">@response.Key</p>
+            </div>
+            <div class="col-6">
+                <p class="col-6">@response.Value</p>
+            </div>
+        </div>
+    }
+    @if (_selectedWords.Count > 0 && !_userResponse.ContainsKey(_keyword))
+    {
+        <div class="row">
+            <div class="col-6">
+                <p class="col-6">@_tries @(_tries == 1 ? "try" : "tries") remaining.</p>
+            </div>
+            <div class="col-6">
+                <p class="col-6">@_error</p>
+            </div>
+        </div>
+    }
 }
 
 @code {
-    private List<Words> words;
-    private List<string> selectedWords;
-    private string keyword;
-    private string userResponse;
-    private string evaluation;
-    private int wordPoolLength = 14;
-    private int tries = 4;
-    Random rand = new Random();
+    private List<Words> _words;
+    private List<string> _selectedWords;
+    private string _keyword;
+    private Dictionary<string, string> _userResponse;
+    private string _evaluation;
+    private string _error;
+    private int _wordPoolLength = 14;
+    private int _tries = 4;
+    readonly Random _rand = new Random();
 
-    public void ClearWords()
+    private void ClearWords()
     {
-        words = new List<Words>();
-        selectedWords = new List<string>();
-        keyword = String.Empty;
-        userResponse = String.Empty;
-        tries = 4;
+        _words = new List<Words>();
+        _selectedWords = new List<string>();
+        _keyword = String.Empty;
+        _error = String.Empty;
+        _userResponse = new Dictionary<string, string>();
+        _tries = 4;
     }
 
-    public async Task GetEasyWordsAsync()
+    private async Task GetEasyWordsAsync()
     {
         ClearWords();
         var wordsConnected = await Http.GetFromJsonAsync<List<Words>>("sample-data/easywords.json");
-        words = wordsConnected.ToList();
-        RandomWordList(words);
+        _words = wordsConnected.ToList();
+        RandomWordList(_words);
     }
 
-    public async Task GetMediumWordsAsync()
+    private async Task GetMediumWordsAsync()
     {
         ClearWords();
         var wordsConnected = await Http.GetFromJsonAsync<List<Words>>("sample-data/mediumwords.json");
-        words = wordsConnected.ToList();
-        RandomWordList(words);
+        _words = wordsConnected.ToList();
+        RandomWordList(_words);
     }
 
-    public async Task GetHardWordsAsync()
+    private async Task GetHardWordsAsync()
     {
         ClearWords();
         var wordsConnected = await Http.GetFromJsonAsync<List<Words>>("sample-data/hardwords.json");
-        words = wordsConnected.ToList();
-        RandomWordList(words);
+        _words = wordsConnected.ToList();
+        RandomWordList(_words);
     }
 
-    public class Words
+    private class Words
     {
-        public string text { get; set; }
+        public string Text { get; set; }
     }
 
-    public void RandomWordList(List<Words> oldList)
+    private void RandomWordList(List<Words> oldList)
     {
         List<string> tempList = new List<string>();
-        while (tempList.Count < wordPoolLength)
+        while (tempList.Count < _wordPoolLength)
         {
-            tempList.Add(oldList[rand.Next(oldList.Count)].text);
+            tempList.Add(oldList[_rand.Next(oldList.Count)].Text);
         }
-        selectedWords = tempList;
-        keyword = selectedWords[rand.Next(selectedWords.Count)];
+        _selectedWords = tempList;
+        _keyword = _selectedWords[_rand.Next(_selectedWords.Count)];
     }
 
-    public void CheckGuess()
+    private void CheckGuess(string word)
     {
-        if (userResponse == keyword)
-            evaluation = "Good job!";
-        else if (userResponse.Length != keyword.Length)
+        _error = String.Empty;
+        if (_tries == 0 || _userResponse.ContainsKey(_keyword))
+            return;
+        else if (_userResponse.ContainsKey(word))
         {
-            evaluation = "Please enter the correct length of word.";
+            _error = "Please select a new word.";
+            return;
         }
+        else if (word == _keyword)
+            _evaluation = "Good job!";
         else
         {
-            CheckLetters();
-            tries--;
+            CheckLetters(word);
+            _tries--;
         }
-        if (tries == 0)
+        if (_tries == 0)
         {
-            evaluation = "Game Over!";
+            _evaluation = $"Game Over! The password was {_keyword}";
         }
+        _userResponse.Add(word, _evaluation);
     }
 
-    public void CheckLetters()
+    private void CheckLetters(string word)
     {
-        int correctChars = 0;
-        for (int i = 0; i < userResponse.Length; i++)
-        {
-            if (keyword[i] == userResponse[i])
-            {
-                correctChars++;
-            }
-        }
-        evaluation = $"You got {correctChars} letters correct.";
+        int correctChars = word.Where((t, i) => _keyword[i] == t).Count();
+        _evaluation = $"You got {correctChars} letters correct.";
     }
 }
