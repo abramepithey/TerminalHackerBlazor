@@ -1,25 +1,23 @@
 @page "/terminalhacker"
 @inject HttpClient Http
 
-<h1>Terminal Hacker</h1>
+<h1 class="tt-spacing">Terminal Hacker</h1>
 
-<p>This component is the work-in-progress web version of my Terminal Hacker console application.</p>
-
-<button class="btn-terminal terminal-text-color my-1" @onclick="GetEasyWordsAsync">Easy Words</button>
-<button class="btn-terminal terminal-text-color my-1" @onclick="GetMediumWordsAsync">Medium Words</button>
-<button class="btn-terminal terminal-text-color my-1" @onclick="GetHardWordsAsync">Hard Words</button>
+<button class="btn-terminal tt-color tt-size mt-1" @onclick="GetEasyWordsAsync">Easy Words</button>
+<button class="btn-terminal tt-color tt-size mt-1" @onclick="GetMediumWordsAsync">Medium Words</button>
+<button class="btn-terminal tt-color tt-size mt-1" @onclick="GetHardWordsAsync">Hard Words</button>
 @if (_words == null)
 {
-    <p><em>Select a difficulty!</em></p>
+    <p class="tt-size tt-spacing"><em>Select a difficulty!</em></p>
 }
 else
 {
-    <button class="btn-terminal terminal-text-color my-1" type="reset" @onclick="ClearWords">Clear</button>
-    <div class="row my-sm-5 my-2">
+    <button class="btn-terminal tt-color tt-size mt-1" type="reset" @onclick="ClearWords">Clear</button>
+    <div class="row my-2">
         @foreach (var word in _selectedWords)
         {
             <div class="col-6">
-                <button class="mx-auto btn-terminal terminal-text-color" @onclick="() => CheckGuess(word)">@word</button>
+                <button class="mx-auto btn-terminal tt-size tt-color" @onclick="() => CheckGuess(word)">@word</button>
             </div>
         }
     </div>
@@ -27,10 +25,10 @@ else
     {
         <div class="row">
             <div class="col-6">
-                <p class="col-6">@response.Key</p>
+                <p class="tt-size tt-spacing">@response.Key</p>
             </div>
             <div class="col-6">
-                <p class="col-6">@response.Value</p>
+                <p class="tt-size tt-spacing">@response.Value</p>
             </div>
         </div>
     }
@@ -38,10 +36,10 @@ else
     {
         <div class="row">
             <div class="col-6">
-                <p class="col-6">@_tries @(_tries == 1 ? "try" : "tries") remaining.</p>
+                <p class="tt-size tt-spacing">@_tries @(_tries == 1 ? "try" : "tries") remaining.</p>
             </div>
             <div class="col-6">
-                <p class="col-6">@_error</p>
+                <p class="tt-size tt-spacing">@_error</p>
             </div>
         </div>
     }
@@ -102,7 +100,9 @@ else
         List<string> tempList = new List<string>();
         while (tempList.Count < _wordPoolLength)
         {
-            tempList.Add(oldList[_rand.Next(oldList.Count)].Text);
+            var potential = oldList[_rand.Next(oldList.Count)].Text;
+            if (!tempList.Contains(potential))
+                tempList.Add(potential);
         }
         _selectedWords = tempList;
         _keyword = _selectedWords[_rand.Next(_selectedWords.Count)];

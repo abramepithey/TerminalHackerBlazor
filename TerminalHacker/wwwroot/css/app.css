@@ -5,6 +5,9 @@ html, body {
     /* font-family: 'VT323', monospace; */
     color: rgb(114,236,136);
     text-shadow: 0 0 5px #b2ffb2;
+    height: 100%;
+    background-color: black;
+    background-image: radial-gradient( rgba(0, 150, 0, 0.75), black 120%);
 }
 
 a, a:hover, .btn-link, .btn-link:hover {
@@ -33,8 +36,6 @@ app {
 .main {
     flex: 1;
     align-self: stretch !important;
-    background-color: black;
-    background-image: radial-gradient( rgba(0, 150, 0, 0.75), black 120%);
 }
 
     .main .top-row {
@@ -145,13 +146,21 @@ app {
 
 /* Additional Styling */
 
+.terminal-link {
+    text-decoration: underline;
+}
+
+.terminal-link:hover {
+    background-color: rgba(255,255,255,0.2);
+}
+
 .terminal-background-color {
     background-color: black;
     background-image: radial-gradient( rgba(0, 150, 0, 0.75), black 120% );
 }
 
-.terminal-text-color {
-    color: rgb(114,236,136);
+.tt-color {
+    color: rgb(114, 236, 136);
     text-shadow: 0 0 5px #b2ffb2;
 }
 
@@ -167,6 +176,29 @@ app {
 
 .btn-terminal:hover {
     background-color: rgba(255,255,255,0.2);
+}
+
+body::before {
+    content: " ";
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+    z-index: 2;
+    background-size: 100% 2px, 3px 100%;
+    pointer-events: none;
+}
+
+.tt-size {
+    font-size: 2em;
+}
+
+.tt-spacing {
+    padding: 0 1rem;
+    margin-bottom: 0;
 }
 
 /* End of additional styling */
@@ -214,5 +246,9 @@ app {
     .sidebar .collapse {
         /* Never collapse the sidebar for wide screens */
         display: block;
+    }
+    
+    .content {
+        margin-left: -1rem;
     }
 }
