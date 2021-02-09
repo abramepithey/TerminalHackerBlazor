@@ -100,7 +100,9 @@ else
         List<string> tempList = new List<string>();
         while (tempList.Count < _wordPoolLength)
         {
-            tempList.Add(oldList[_rand.Next(oldList.Count)].Text);
+            var potential = oldList[_rand.Next(oldList.Count)].Text;
+            if (!tempList.Contains(potential))
+                tempList.Add(potential);
         }
         _selectedWords = tempList;
         _keyword = _selectedWords[_rand.Next(_selectedWords.Count)];
