@@ -8,12 +8,4 @@ Potential future plans for the project include separating the application out wi
 
 #### Links
 
-I am currently utilizing two different hosting options, both on Azure.
-
-The first is a Static Web App, which works very well with GitHub to keep the hosted project up-to-date, but can be finicky at times.
-
-Link: [gray-forest-0a558ee1e.azurestaticapps.net](gray-forest-0a558ee1e.azurestaticapps.net)
-
-The second is a more traditional Web Application, which is slightly more work to keep up-to-date, but much more stable.
-
-Link: [terminalhacker.azurewebsites.net](terminalhacker.azurewebsites.net)
+[https://terminalhacker.azurewebsites.net](terminalhacker.azurewebsites.net)
