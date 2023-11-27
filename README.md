@@ -8,4 +8,4 @@ Potential future plans for the project include separating the application out wi
 
 #### Links
 
-[https://terminalhacker.azurewebsites.net](terminalhacker.azurewebsites.net)
+[Hosted Application](https://terminalhacker.azurewebsites.net)
